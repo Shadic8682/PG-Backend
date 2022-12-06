@@ -1,4 +1,4 @@
 class Garden < ActiveRecord::Base
-    belongs_to :crop
-    belongs_to :gardner
+    has_many :crops
+    belongs_to :gardener
 end

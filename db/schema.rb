@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_05_223335) do
+ActiveRecord::Schema.define(version: 2022_12_06_143749) do
 
   create_table "crops", force: :cascade do |t|
     t.string "name"
@@ -25,6 +25,11 @@ ActiveRecord::Schema.define(version: 2022_12_05_223335) do
     t.string "season"
     t.integer "gardener_id"
     t.integer "crop_id"
+  end
+
+  create_table "harvest_containers", force: :cascade do |t|
+    t.integer "crop_id"
+    t.integer "gardener_id"
   end
 
 end
