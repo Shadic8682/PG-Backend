@@ -16,7 +16,12 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/crops" do
-    Crop.all.to_json(include: :gardens)
+    Crop.all.to_json
+  end
+
+  post "gardeners" do
+    newGardener = Gardener.create(params)
+    newGardener.to_json
   end
 
 end
