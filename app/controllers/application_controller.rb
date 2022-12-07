@@ -8,7 +8,7 @@ class ApplicationController < Sinatra::Base
 
   # pulls up all the gardener instances
   get "/gardeners" do
-    Gardener.all.to_json
+    Gardener.all.to_json()
   end
 
   get "/gardens" do
@@ -16,17 +16,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/crops" do
-    Crop.all.to_json
-  end
-
-  # Pulls up all our data
-  get "/" do
-    gardeners = Gardener.all
-    gardens = Garden.all
-    crops = Crop.all
-    harvest_containers = HarvestContainer.all
-    all = gardeners, gardens, crops, harvest_containers
-    all.to_json
+    Crop.all.to_json(include: :gardens)
   end
 
 end

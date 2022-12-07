@@ -1,4 +1,5 @@
 class Crop < ActiveRecord::Base
-    belongs_to :garden
-    belongs_to :harvest_container
+    has_many :gardens
+    has_many :gardeners, through: :gardens
+    # belongs_to :harvest_container
 end
