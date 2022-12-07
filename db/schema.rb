@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_06_190315) do
+ActiveRecord::Schema.define(version: 2022_12_05_223335) do
 
   create_table "crops", force: :cascade do |t|
     t.string "name"
     t.string "season"
     t.string "description"
     t.integer "growth_time"
+    t.integer "garden_id"
   end
 
   create_table "gardeners", force: :cascade do |t|
@@ -25,13 +26,6 @@ ActiveRecord::Schema.define(version: 2022_12_06_190315) do
 
   create_table "gardens", force: :cascade do |t|
     t.string "season"
-    t.integer "gardener_id"
-    t.integer "crop_id"
-    t.integer "harvest_container_id"
-  end
-
-  create_table "harvest_containers", force: :cascade do |t|
-    t.integer "crop_id"
     t.integer "gardener_id"
   end
 
