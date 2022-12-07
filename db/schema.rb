@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2022_12_06_190315) do
     t.string "season"
     t.integer "gardener_id"
     t.integer "crop_id"
-    t.integer "harvest_id"
+    t.integer "harvest_container_id"
   end
 
   create_table "harvest_containers", force: :cascade do |t|
