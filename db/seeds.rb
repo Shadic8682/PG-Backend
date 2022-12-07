@@ -61,26 +61,44 @@ description: "This extremely hardy vegetable loves the cold. In fact, the leaves
 growth_time: "ready for harvest in about 30 to 40 days")
 
 fall2 = Crop.create(name: "Cauliflower", season: "fall", 
-description: "When grown in the fall, cauliflower produces tight, tender heads and does extremely well. Start your fall crop a little earlier, more mid-summer, as they do take a little longer to mature. To get a jump on them, seeds can be started indoors sooner and seedlings transplanted mid-to-late summer."
+description: "When grown in the fall, cauliflower produces tight, tender heads and does extremely well. Start your fall crop a little earlier, more mid-summer, as they do take a little longer to mature. To get a jump on them, seeds can be started indoors sooner and seedlings transplanted mid-to-late summer.",
 growth_time: "three to five months")
 
 fall3 = Crop.create(name: "Spinach", season: "fall", 
-description: "You’ll have better germination rates mid-to-late summer with the warmer soil at planting time. The cooler temperatures at the time the leaves are maturing produces tender, tastier leaves. Spinach is the most cold-tolerant salad green and can tolerate light frost. As with radishes, plant a batch every 2 weeks and you’ll have spinach growing up until winter."
+description: "You’ll have better germination rates mid-to-late summer with the warmer soil at planting time. The cooler temperatures at the time the leaves are maturing produces tender, tastier leaves. Spinach is the most cold-tolerant salad green and can tolerate light frost. As with radishes, plant a batch every 2 weeks and you’ll have spinach growing up until winter.",
 growth_time: "6 weeks of cool weather from seeding to harvest")
 
 fall4 = Crop.create(name: "Radishes", season: "fall", 
-description: "Along with carrots and beets, radishes grown in fall have better flavor than those grown in spring. They grow quickly, so you may even have time to succession plant 2 or 3 rounds, planting every 2 weeks. If their flavor is a bit harsh for you, try roasting them for a whole new spin." 
+description: "Along with carrots and beets, radishes grown in fall have better flavor than those grown in spring. They grow quickly, so you may even have time to succession plant 2 or 3 rounds, planting every 2 weeks. If their flavor is a bit harsh for you, try roasting them for a whole new spin.",
 growth_time: "Harvest three to five weeks after planting")
 
 fall5 = Crop.create(name: "Parsnips", season: "fall", 
-description: "These root veggies should be planted directly into the garden. They can be slow to germinate, but can be started in a damp paper towel. Dig them out before the ground freezes and they’ll keep in the refrigerator through the winter." 
+description: "These root veggies should be planted directly into the garden. They can be slow to germinate, but can be started in a damp paper towel. Dig them out before the ground freezes and they’ll keep in the refrigerator through the winter.",
 growth_time: "100 days")
 
 
 puts "Creating Gardens"
-g1 = Garden.create(season: "spring", gardener_id: gardener.id, crop_id: c1.id)
-g2 = Garden.create(season: "summer", gardener_id: gardener.id, crop_id: c2.id)
-g3 = Garden.create(season: "fall", gardener_id: gardener.id, crop_id: c3.id)
+spring_g1 = Garden.create(season: "spring", gardener_id: gardener.id, crop_id: spring1.id)
+spring_g2 = Garden.create(season: "spring", gardener_id: gardener.id, crop_id: spring2.id)
+spring_g3 = Garden.create(season: "spring", gardener_id: gardener.id, crop_id: spring3.id)
+spring_g4 = Garden.create(season: "spring", gardener_id: gardener.id, crop_id: spring4.id)
+spring_g5 = Garden.create(season: "spring", gardener_id: gardener.id, crop_id: spring5.id)
+
+# ------------------------------------------------------------------------------------------------------
+
+summer_g1 = Garden.create(season: "summer", gardener_id: gardener.id, crop_id: summer1.id)
+summer_g2 = Garden.create(season: "summer", gardener_id: gardener.id, crop_id: summer2.id)
+summer_g3 = Garden.create(season: "summer", gardener_id: gardener.id, crop_id: summer3.id)
+summer_g4 = Garden.create(season: "summer", gardener_id: gardener.id, crop_id: summer4.id)
+summer_g5 = Garden.create(season: "summer", gardener_id: gardener.id, crop_id: summer5.id)
+
+# ------------------------------------------------------------------------------------------------------
+
+fall_g1 = Garden.create(season: "fall", gardener_id: gardener.id, crop_id: fall1.id)
+fall_g2 = Garden.create(season: "fall", gardener_id: gardener.id, crop_id: fall2.id)
+fall_g3 = Garden.create(season: "fall", gardener_id: gardener.id, crop_id: fall3.id)
+fall_g4 = Garden.create(season: "fall", gardener_id: gardener.id, crop_id: fall4.id)
+fall_g5 = Garden.create(season: "fall", gardener_id: gardener.id, crop_id: fall5.id)
 
 
 puts "Creating Harvest Containers"
