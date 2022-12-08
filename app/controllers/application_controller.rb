@@ -16,11 +16,15 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/gardens/:id' do
-    Garden.find_by(params[:id]).to_json(include: :crops)
+    Garden.find_by(id: params[:id]).to_json(include: :crops)
   end
 
   get '/crops' do
     Crop.all.to_json
+  end
+
+  get '/crops/:id' do
+    Crop.find(params[:id]).to_json
   end
 
   put '/gardeners' do
@@ -29,7 +33,7 @@ class ApplicationController < Sinatra::Base
   end
 
   patch '/crops/:id' do
-    Crop.update(garden_id: params[:garden_id]).to_json
+    Crop.find_by(id: params[:id]).update(garden_id: params[:garden_id]).to_json
   end
 
 end
