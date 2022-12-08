@@ -15,6 +15,10 @@ class ApplicationController < Sinatra::Base
     Garden.all.to_json(include: :crops)
   end
 
+  get '/gardens/:id' do
+    Garden.find_by(params[:id])(include: :crops)
+  end
+
   get '/crops' do
     Crop.all.to_json
   end
