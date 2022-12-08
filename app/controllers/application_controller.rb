@@ -24,4 +24,8 @@ class ApplicationController < Sinatra::Base
     new_gardener.to_json
   end
 
+  patch '/crops/:id' do
+    Crop.update(garden_id: params[:garden_id]).to_json
+  end
+
 end
