@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_05_223335) do
+ActiveRecord::Schema.define(version: 2022_12_09_141740) do
 
   create_table "crops", force: :cascade do |t|
     t.string "name"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2022_12_05_223335) do
     t.string "description"
     t.integer "growth_time"
     t.integer "garden_id"
+    t.string "img_url"
   end
 
   create_table "gardeners", force: :cascade do |t|

@@ -28,6 +28,7 @@ class ApplicationController < Sinatra::Base
   end
 
   put '/gardeners' do
+    Gardener.destroy_all
     new_gardener = Gardener.create(name: params[:name])
     new_gardener.to_json
   end
@@ -36,4 +37,7 @@ class ApplicationController < Sinatra::Base
     Crop.find_by(id: params[:id]).update(garden_id: params[:garden_id]).to_json
   end
 
+  delete '/gardens/:id/crops/' do
+    Garden.find_by(id: params[:id]).crops.destroy_all.to_json
+  end
 end
